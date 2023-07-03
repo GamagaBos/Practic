@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+$breakpoint-small: 576px;
+
+body {
+   background: rgba(30, 37, 43, 1);
+   font-family: "Poppins", sans-serif;
+   color: white;
+   p {
+      color: rgba(255, 255, 255, 0.55);
+   }
+}
+
+*:focus {
+   outline: none;
+}
+
+.links {
+   * {
+      cursor: pointer;
+   }
+}
+
+.my-button {
+   background: rgba(255, 110, 48, 1);
+   border-radius: 8px;
+   padding: 0.6em;
+   min-width: 100px;
+   max-width: fit-content;
+   cursor: pointer;
+}
+
+.search-wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: fit-content;
+   padding: 10px;
+   border-radius: 10px;
+   background: linear-gradient(0deg, #283036, #283036),
+      linear-gradient(
+         90.89deg,
+         rgba(255, 255, 255, 0.1) -1.67%,
+         rgba(255, 255, 255, 0) 103.73%
+      );
+
+   .search-input {
+      width: 260px;
+      padding: 10px;
+      background: none;
+   }
+}
+
+.my-plate {
+   border-radius: 15px;
+   max-width: 400px;
+   min-width: 200px;
+   height: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 2em;
+   gap: 40px;
+   border: 1px solid transparent;
+   transition: all 0.2s linear;
+
+   &:hover {
+      border: 1px solid gray;
+      scale: 1.04;
+      box-shadow: 0px 0px 45px -8px rgba(255, 255, 255, 0.215);
+   }
+
+   .icons {
+      cursor: pointer;
+   }
+}
+
+.my-plate2 {
+   border-radius: 15px;
+   width: 280px;
+   height: 280px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 2em;
+   gap: 40px;
+   border: 1px solid transparent;
+   transition: all 0.2s linear;
+
+   &:hover {
+      border: 1px solid gray;
+      scale: 1.04;
+      box-shadow: 0px 0px 45px -8px rgba(255, 255, 255, 0.215);
+   }
+
+   .icons {
+      cursor: pointer;
+   }
+}
+
+.swiper {
+   margin: 3em;
+   width: 1220px;
+   height: 600px;
+
+   .swiper-button-prev,
+   .swiper-button-next {
+      &::after {
+         color: rgba(255, 255, 255, 0.325);
+         transition: all 0.2s linear;
+      }
+      &:hover {
+         &::after {
+            color: rgba(255, 110, 48, 1);
+         }
+      }
+   }
+
+   .swiper-pagination {
+      span {
+         --swiper-theme-color: rgba(255, 110, 48, 1);
+         width: 30px;
+         border-radius: 5px;
+      }
+   }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+   .swiper {
+      width: auto;
+      height: auto;
+   }
+   .links {
+      z-index: -1;
+      position: absolute;
+      flex-direction: column;
+      top: 100%;
+      background-color: #28303663;
+      width: 100%;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.2s linear;
+
+      > * {
+         padding: 0.2em;
+      }
+      &.active {
+         opacity: 1;
+      }
+   }
+}
